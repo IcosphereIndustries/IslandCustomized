@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "islandcustomized",
+  "version": "${version}",
+  "name": "IslandCustomized",
+  "description": "Customization & utility mod for MCC Island.",
+  "authors": [
+    {
+      "name": "Candycup",
+      "contact": {
+        "email": "karkkikuppi@gmail.com",
+        "discord": "Candycup#7007"
+      }
+    }
+  ],
+  "contact": {
+    "homepage": "https://github.com/IcosphereIndustries/IslandCustomized",
+    "issues": "https://github.com/IcosphereIndustries/IslandCustomized/issues",
+    "sources": "https://github.com/IcosphereIndustries/IslandCustomized",
+    "website": "https://github.com/IcosphereIndustries/IslandCustomized",
+    "repo": "https://github.com/IcosphereIndustries/IslandCustomized",
+  },
+  "license": "MIT",
+  "icon": "assets/IslandCustomized/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "industries.icosphere.islandcustomized.client.IslandCustomizedClient"
+    ],
+    "main": [
+      "industries.icosphere.islandcustomized.IslandCustomized"
+    ]
+  },
+  "mixins": [
+    "islandcustomized.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
