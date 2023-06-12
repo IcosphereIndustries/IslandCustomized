@@ -28,4 +28,3 @@ gradle-app.setting
 
 # ngl i'm not that good with gradle but these files seem like a good idea to ignore
 gradle/wrapper/gradle-wrapper.jar
-gradle/wrapper/gradle-wrapper.properties
