@@ -16,9 +16,7 @@
   "contact": {
     "homepage": "https://github.com/IcosphereIndustries/IslandCustomized",
     "issues": "https://github.com/IcosphereIndustries/IslandCustomized/issues",
-    "sources": "https://github.com/IcosphereIndustries/IslandCustomized",
-    "website": "https://github.com/IcosphereIndustries/IslandCustomized",
-    "repo": "https://github.com/IcosphereIndustries/IslandCustomized",
+    "sources": "https://github.com/IcosphereIndustries/IslandCustomized"
   },
   "license": "MIT",
   "icon": "assets/IslandCustomized/icon.png",
