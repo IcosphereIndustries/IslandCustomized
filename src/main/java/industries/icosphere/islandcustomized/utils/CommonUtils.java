@@ -62,10 +62,6 @@ public class CommonUtils {
                 result.append(mutableTextFromString(s));
             }
         }
-
-        System.out.println(Arrays.toString(split));
-        System.out.println(colors);
-
         return result;
     }
 
