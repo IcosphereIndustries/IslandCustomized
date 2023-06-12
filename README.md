@@ -14,6 +14,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/minecraft-1.20-brightgreen" alt="Minecraft version">
     <img src="https://img.shields.io/badge/fabric%20loader-0.14.21%2B-green" alt="Fabric loader version">
+    <img src="https://img.shields.io/badge/mcc%20island-0.7.5-yellowgreen" alt="MCC Island version">
 </p>
 
 ## Development
