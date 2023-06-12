@@ -6,4 +6,5 @@ public enum IslandGameMode {
     HITW,
     TGTTOS,
     PARKOUR_WARRIOR,
+    UNKNOWN
 }

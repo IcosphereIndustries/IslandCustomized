@@ -1,27 +1,16 @@
 package industries.icosphere.islandcustomized.utils;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TextColor;
-import net.minecraft.util.Formatting;
 
 import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class CommonUtils {
-    public static boolean isOnMCCi() {
-        if (MinecraftClient.getInstance().getCurrentServerEntry() == null) {
-            // Player is not on a server.
-            return false;
-        }
-
-        return MinecraftClient.getInstance().getCurrentServerEntry().address.contains("mccisland.net");
-    }
 
     public static MutableText mutableTextFromString(String input) {
         return Text.of(input).copy();

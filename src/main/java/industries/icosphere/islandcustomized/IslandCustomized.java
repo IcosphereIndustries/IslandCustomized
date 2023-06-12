@@ -13,5 +13,7 @@ public class IslandCustomized implements ModInitializer {
     @Override
     public void onInitialize() {
 
+        // TODO: Delete this next commit
+        System.out.println("Hahahahah i'm using this on Purpose Hahahahahahahahaha");
     }
 }
