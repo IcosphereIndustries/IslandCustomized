@@ -28,5 +28,11 @@
   "text.config.islandcustomized.category.parkourWarrior_titleReplacements": "Parkour Warrior Message Customizations",
   "text.config.islandcustomized.option.parkourWarrior_titleReplacements.victoryTitles": "Victory titles",
   "text.config.islandcustomized.option.parkourWarrior_titleReplacements.defeatTitles": "Defeat titles",
-  "text.config.islandcustomized.option.parkourWarrior_titleReplacements.victoryTitles.tooltip": "Title that appears on your screen when you finish 1st.\nDefaults to: §cidk i haven't been on the server for months"
+  "text.config.islandcustomized.option.parkourWarrior_titleReplacements.victoryTitles.tooltip": "Title that appears on your screen when you finish 1st.\nDefaults to: §cidk i haven't been on the server for months",
+
+  "text.config.islandcustomized.section.advancedDeveloperOptions": "§7§lAdvanced Developer Options",
+  "text.config.islandcustomized.category.developerResources": "Developer Resources",
+  "text.config.islandcustomized.category.developerResources.tooltip": "These options are meant for development purposes. You shouldn't touch them unless you know what you're doing.\nAnd we mean like you *really* know what you're doing.",
+  "text.config.islandcustomized.option.developerResources.mapInstance": "TreasureMap URL",
+  "text.config.islandcustomized.option.developerResources.mapInstance.tooltip": "TreasureMap is an online database that stores message information for MCCi, managed by us.\nThis allows us to adapt to changes in MCCi's message formats without you having to update the mod.\n§c§lIf this URL is invalid, bad things will happen!"
 }

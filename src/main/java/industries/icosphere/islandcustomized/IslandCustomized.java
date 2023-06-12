@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 
 public class IslandCustomized implements ModInitializer {
     public static final IslandCustomizedConfig config = IslandCustomizedConfig.createAndLoad();
+    public static final IslandTreasureMap map = new IslandTreasureMap();
 
     /**
      * Runs the mod initializer.

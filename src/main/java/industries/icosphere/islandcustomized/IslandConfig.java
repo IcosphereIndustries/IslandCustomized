@@ -24,6 +24,10 @@ public class IslandConfig {
     @Nest
     public ParkourWarriorTitleReplacements parkourWarrior_titleReplacements = new ParkourWarriorTitleReplacements();
 
+    @SectionHeader("advancedDeveloperOptions")
+    @Nest
+    public DeveloperResources developerResources = new DeveloperResources();
+
     public static class BattleBoxTitleReplacements {
         public List<String> victoryTitles = new ArrayList<>(List.of("Victory!"));
         public List<String> defeatTitles = new ArrayList<>(List.of("Defeat!"));
@@ -47,5 +51,9 @@ public class IslandConfig {
     public static class ParkourWarriorTitleReplacements {
         public List<String> victoryTitles = new ArrayList<>(List.of("Victory!"));
         public List<String> defeatTitles = new ArrayList<>(List.of("Defeat!"));
+    }
+
+    public static class DeveloperResources {
+        public String mapInstance = "https://raw.githubusercontent.com/IcosphereIndustries/IslandTreasureMap/main/v1.json";
     }
 }
