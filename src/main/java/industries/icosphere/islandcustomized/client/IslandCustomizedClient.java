@@ -9,5 +9,7 @@ public class IslandCustomizedClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+        // hi guys :3
+
     }
 }
