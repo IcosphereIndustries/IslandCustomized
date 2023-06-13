@@ -34,22 +34,22 @@ public class IslandConfig {
     }
 
     public static class SkyBattleTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!");
+        public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
         public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lDefeat!"));
     }
 
     public static class HitwTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!");
+        public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
         public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lDefeat!"));
     }
 
     public static class TgttosTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!");
+        public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
         public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lDefeat!"));
     }
 
     public static class ParkourWarriorTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!");
+        public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
         public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lDefeat!"));
     }
 
