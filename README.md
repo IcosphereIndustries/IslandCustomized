@@ -18,8 +18,8 @@
 </p>
 
 # IMPORTANT
-Currently IslandCustomized is very limited. The configuration system depends on [**Mod Menu**](https://modrinth.com/mod/modmenu/version/7.0.1).
-You will need mod menu for configuring the mod. This will be changed in the future.
+Currently IslandCustomized is very limited. We recommend using  [**Mod Menu**](https://modrinth.com/mod/modmenu/version/7.0.1) for the configurating.
+Alternatively, you can do `/owo-config islandcustomized`. We're working on a better solution.
 
 [**With that being said, you can download the mod here.**](https://github.com/IcosphereIndustries/IslandCustomized/releases)
 
