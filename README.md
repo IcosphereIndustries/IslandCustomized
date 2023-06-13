@@ -24,6 +24,16 @@ You will need mod menu for configuring the mod. This will be changed in the futu
 [**With that being said, you can download the mod here.**](https://github.com/IcosphereIndustries/IslandCustomized/releases)
 
 We'll publish the mod to Modrinth once it's more complete.
+
+## Features
+### Customization
+* You can customize the death & victory messages in different gamemodes. More to come.
+* Full RGB support. You can use HEX colors in the config by inserting them in the strings
+like this: 
+
+HEX colors: `<#ff0000>This is in red!`
+
+[Vanilla codes:](https://www.digminecraft.com/lists/color_list_pc.php) `&l&cThis text is red and bold!`
 ## Development
 ### Setup
 1. Clone the repository, do the obvious stuff
