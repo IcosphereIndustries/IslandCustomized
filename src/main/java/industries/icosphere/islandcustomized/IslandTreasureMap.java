@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ import java.util.List;
  */
 public class IslandTreasureMap {
     private JsonObject treasureMap;
+    private HashMap<String, Object> cachedData = new HashMap<>();
 
     public IslandTreasureMap() {
         try {
@@ -59,6 +61,10 @@ public class IslandTreasureMap {
      * @return The value of the key. Example: "Battle Box"
      */
     public String getFromTreasureMap(String key) {
+        if (this.cachedData.containsKey(key)) {
+            return (String) this.cachedData.get(key);
+        }
+
         String[] keyParts = key.split("\\.");
 
         JsonElement jsonElement = this.treasureMap;
@@ -69,6 +75,7 @@ public class IslandTreasureMap {
             }
         }
 
+        this.cachedData.put(key, jsonElement.getAsString());
         return jsonElement.getAsString();
     }
 
@@ -78,6 +85,10 @@ public class IslandTreasureMap {
      * @return The value of the key. Example: 12
      */
     public int getFromTreasureMapAsInt(String key) {
+        if (this.cachedData.containsKey(key)) {
+            return (int) this.cachedData.get(key);
+        }
+
         String[] keyParts = key.split("\\.");
 
         JsonElement jsonElement = this.treasureMap;
@@ -88,6 +99,7 @@ public class IslandTreasureMap {
             }
         }
 
+        this.cachedData.put(key, jsonElement.getAsString());
         return jsonElement.getAsInt();
     }
 }

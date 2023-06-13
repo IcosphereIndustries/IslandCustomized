@@ -1,4 +1,4 @@
-package industries.icosphere.islandcustomized.utils;
+package industries.icosphere.islandcustomized.islandutils;
 
 public enum IslandGameMode {
     BATTLE_BOX,

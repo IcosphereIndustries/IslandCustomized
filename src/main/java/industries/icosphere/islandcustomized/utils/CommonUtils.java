@@ -1,5 +1,7 @@
 package industries.icosphere.islandcustomized.utils;
 
+import io.wispforest.owo.config.ui.ConfigScreen;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
@@ -9,6 +11,9 @@ import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import static industries.icosphere.islandcustomized.IslandCustomized.config;
+import static industries.icosphere.islandcustomized.IslandCustomized.client;
 
 public class CommonUtils {
 
@@ -60,6 +65,16 @@ public class CommonUtils {
      * @return A random element from the array
      */
     public static Object pickRandom(List<?> array) {
-        return array.get((int) (Math.random() * array.size()));
+        try {
+            return array.get((int) (Math.random() * array.size()));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Array is empty!");
+            return null;
+        }
+    }
+
+    public static void displayConfigScreen() {
+        ConfigScreen configScreen = ConfigScreen.create(config, client.currentScreen);
+        client.setScreen(configScreen);
     }
 }

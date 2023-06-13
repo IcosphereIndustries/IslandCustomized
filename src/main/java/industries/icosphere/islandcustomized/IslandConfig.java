@@ -29,31 +29,32 @@ public class IslandConfig {
     public DeveloperResources developerResources = new DeveloperResources();
 
     public static class BattleBoxTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("Victory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("Defeat!"));
+        public List<String> victoryTitles = new ArrayList<>();
+        public List<String> defeatTitles = new ArrayList<>();
     }
 
     public static class SkyBattleTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("Victory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("Defeat!"));
+        public List<String> victoryTitles = new ArrayList<>();
+        public List<String> defeatTitles = new ArrayList<>();
     }
 
     public static class HitwTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("Victory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("Defeat!"));
+        public List<String> victoryTitles = new ArrayList<>();
+        public List<String> defeatTitles = new ArrayList<>();
     }
 
     public static class TgttosTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("Victory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("Defeat!"));
+        public List<String> victoryTitles = new ArrayList<>();
+        public List<String> defeatTitles = new ArrayList<>();
     }
 
     public static class ParkourWarriorTitleReplacements {
-        public List<String> victoryTitles = new ArrayList<>(List.of("Victory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("Defeat!"));
+        public List<String> victoryTitles = new ArrayList<>();
+        public List<String> defeatTitles = new ArrayList<>();
     }
 
     public static class DeveloperResources {
         public String mapInstance = "https://raw.githubusercontent.com/IcosphereIndustries/IslandTreasureMap/main/v1.json";
+        public boolean enableDeveloperMode = false;
     }
 }
