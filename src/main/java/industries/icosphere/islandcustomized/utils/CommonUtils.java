@@ -68,7 +68,6 @@ public class CommonUtils {
         try {
             return array.get((int) (Math.random() * array.size()));
         } catch (IllegalArgumentException e) {
-            System.out.println("Array is empty!");
             return null;
         }
     }

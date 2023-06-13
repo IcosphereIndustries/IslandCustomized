@@ -17,6 +17,13 @@
     <img src="https://img.shields.io/badge/mcc%20island-0.7.5-yellowgreen" alt="MCC Island version">
 </p>
 
+# IMPORTANT
+Currently IslandCustomized is very limited. The configuration system depends on [**Mod Menu**](https://modrinth.com/mod/modmenu/version/7.0.1).
+You will need mod menu for configuring the mod. This will be changed in the future.
+
+[**With that being said, you can download the mod here.**](https://github.com/IcosphereIndustries/IslandCustomized/releases)
+
+We'll publish the mod to Modrinth once it's more complete.
 ## Development
 ### Setup
 1. Clone the repository, do the obvious stuff
