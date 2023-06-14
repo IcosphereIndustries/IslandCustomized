@@ -85,27 +85,14 @@ public class IslandUtils {
     public static MutableText pickRandomVictoryTitle() {
         IslandGameMode gameMode = getCurrentGame();
         logger.info(gameMode.name());
-        switch (gameMode) {
-            case HITW -> {
-                return parseColorCodes((String) pickRandom(config.hitw_titleReplacements.victoryTitles()));
-            }
-            case BATTLE_BOX -> {
-                return parseColorCodes((String) pickRandom(config.battleBox_titleReplacements.victoryTitles()));
-            }
-            case TGTTOS -> {
-                return parseColorCodes((String) pickRandom(config.tgttos_titleReplacements.victoryTitles()));
-            }
-            case SKY_BATTLE -> {
-                return parseColorCodes((String) pickRandom(config.skyBattle_titleReplacements.victoryTitles()));
-            }
-            case PARKOUR_WARRIOR -> {
-                return parseColorCodes((String) pickRandom(config.parkourWarrior_titleReplacements.victoryTitles()));
-            }
-            default -> {
-                // Unknown game mode.
-                return null;
-            }
-        }
+        return switch (gameMode) {
+            case HITW -> parseColorCodes((String) pickRandom(config.hitw_titleReplacements.victoryTitles()));
+            case BATTLE_BOX -> parseColorCodes((String) pickRandom(config.battleBox_titleReplacements.victoryTitles()));
+            case TGTTOS -> parseColorCodes((String) pickRandom(config.tgttos_titleReplacements.victoryTitles()));
+            case SKY_BATTLE -> parseColorCodes((String) pickRandom(config.skyBattle_titleReplacements.victoryTitles()));
+            case PARKOUR_WARRIOR -> parseColorCodes((String) pickRandom(config.parkourWarrior_titleReplacements.victoryTitles()));
+            default -> null;
+        };
     }
 
     /**
@@ -114,17 +101,13 @@ public class IslandUtils {
      */
     public static MutableText pickRandomDefeatTitle() {
         IslandGameMode gameMode = getCurrentGame();
-        switch (gameMode) {
+        return switch (gameMode) {
             case HITW -> parseColorCodes((String) pickRandom(config.hitw_titleReplacements.defeatTitles()));
             case BATTLE_BOX -> parseColorCodes((String) pickRandom(config.battleBox_titleReplacements.defeatTitles()));
             case TGTTOS -> parseColorCodes((String) pickRandom(config.tgttos_titleReplacements.defeatTitles()));
             case SKY_BATTLE -> parseColorCodes((String) pickRandom(config.skyBattle_titleReplacements.defeatTitles()));
             case PARKOUR_WARRIOR -> parseColorCodes((String) pickRandom(config.parkourWarrior_titleReplacements.defeatTitles()));
-            default -> {
-                // Unknown game mode.
-                return null;
-            }
-        }
-        return null;
+            default -> null;
+        };
     }
 }

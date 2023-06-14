@@ -41,16 +41,20 @@ public class TitleCustomizationMixin {
 
         if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.victory"))) {
             MutableText newTitle = pickRandomVictoryTitle();
+
             if (newTitle == null) {
                 return;
             }
+
             IslandCustomized.logger.info(newTitle.getString());
             client.inGameHud.setTitle(newTitle);
         } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.defeat"))) {
             MutableText newTitle = pickRandomDefeatTitle();
+
             if (newTitle == null) {
                 return;
             }
+
             IslandCustomized.logger.info(newTitle.getString());
             client.inGameHud.setTitle(newTitle);
         }
