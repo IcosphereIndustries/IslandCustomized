@@ -33,7 +33,7 @@ like this:
 
 HEX colors: `<#ff0000>This is in red!`
 
-[Vanilla codes:](https://www.digminecraft.com/lists/color_list_pc.php) `&l&cThis text is red and bold!`
+[Vanilla codes:](https://www.digminecraft.com/lists/color_list_pc.php) `&c&lThis text is red and bold!`
 ## Development
 ### Setup
 1. Clone the repository, do the obvious stuff
