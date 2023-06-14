@@ -21,8 +21,6 @@ public class IslandConfig {
     public HitwTitleReplacements hitw_titleReplacements = new HitwTitleReplacements();
     @Nest
     public TgttosTitleReplacements tgttos_titleReplacements = new TgttosTitleReplacements();
-    @Nest
-    public ParkourWarriorTitleReplacements parkourWarrior_titleReplacements = new ParkourWarriorTitleReplacements();
 
     @SectionHeader("advancedDeveloperOptions")
     @Nest
