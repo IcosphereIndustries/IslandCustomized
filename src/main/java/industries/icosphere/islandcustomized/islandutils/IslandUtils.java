@@ -105,7 +105,6 @@ public class IslandUtils {
             case BATTLE_BOX -> parseColorCodes((String) pickRandom(config.battleBox_titleReplacements.defeatTitles()));
             case TGTTOS -> parseColorCodes((String) pickRandom(config.tgttos_titleReplacements.defeatTitles()));
             case SKY_BATTLE -> parseColorCodes((String) pickRandom(config.skyBattle_titleReplacements.defeatTitles()));
-            case PARKOUR_WARRIOR -> parseColorCodes((String) pickRandom(config.parkourWarrior_titleReplacements.defeatTitles()));
             default -> null;
         };
     }
