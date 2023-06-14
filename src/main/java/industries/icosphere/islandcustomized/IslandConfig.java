@@ -11,6 +11,9 @@ import java.util.List;
 @Modmenu(modId = "islandcustomized")
 @Config(name = "islandcustomized", wrapperName = "IslandCustomizedConfig")
 public class IslandConfig {
+    @SectionHeader("generalUtilities")
+    @Nest
+    public AutoGG autoGG = new AutoGG();
     @SectionHeader("messageCustomizationSection")
     public boolean messageCustomizationSection = false;
     @Nest
@@ -54,5 +57,10 @@ public class IslandConfig {
     public static class DeveloperResources {
         public String mapInstance = "https://raw.githubusercontent.com/IcosphereIndustries/IslandTreasureMap/main/v1.json";
         public boolean enableDeveloperMode = false;
+    }
+
+    public static class AutoGG {
+        public boolean enableAutoGG = false;
+        public String autoGGMessage = "gg";
     }
 }

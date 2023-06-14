@@ -1,9 +1,8 @@
 package industries.icosphere.islandcustomized.mixin;
 
 import industries.icosphere.islandcustomized.IslandCustomized;
+import industries.icosphere.islandcustomized.islandutils.IslandGameMode;
 import industries.icosphere.islandcustomized.islandutils.IslandUtils;
-import io.wispforest.owo.config.ui.ConfigScreen;
-import io.wispforest.owo.ui.core.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
@@ -17,16 +16,16 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import static industries.icosphere.islandcustomized.IslandCustomized.config;
+import static industries.icosphere.islandcustomized.IslandCustomized.logger;
 import static industries.icosphere.islandcustomized.IslandCustomized.client;
 import static industries.icosphere.islandcustomized.islandutils.IslandUtils.*;
+import static industries.icosphere.islandcustomized.utils.CommonUtils.mutableTextFromString;
 
 
 @Mixin(ClientPlayNetworkHandler.class)
-public class TitleCustomizationMixin {
-    @Shadow @Final private static Logger LOGGER;
-
+public class TitleHandlerMixin {
     @Inject(at = @At("TAIL"), method = "onTitle")
-    private void onTitle(TitleS2CPacket packet, CallbackInfo ci) {
+    private void titleCustomization(TitleS2CPacket packet, CallbackInfo ci) {
         if (!IslandUtils.isOnMCCi() && !config.developerResources.enableDeveloperMode()) {
             // Player is not on MCCi.
             return;
@@ -46,7 +45,6 @@ public class TitleCustomizationMixin {
                 return;
             }
 
-            IslandCustomized.logger.info(newTitle.getString());
             client.inGameHud.setTitle(newTitle);
         } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.defeat"))) {
             MutableText newTitle = pickRandomDefeatTitle();
@@ -55,8 +53,40 @@ public class TitleCustomizationMixin {
                 return;
             }
 
-            IslandCustomized.logger.info(newTitle.getString());
             client.inGameHud.setTitle(newTitle);
         }
     }
+
+    @Inject(at = @At("TAIL"), method = "onTitle")
+    private void autoGG(TitleS2CPacket packet, CallbackInfo ci) {
+        if (!config.autoGG.enableAutoGG()) {
+            System.out.println("AutoGG is disabled.");
+            return;
+        }
+
+        if (!IslandUtils.isOnMCCi() && !config.developerResources.enableDeveloperMode()) {
+            // Player is not on MCCi.
+            System.out.println("Player is not on MCCi.");
+            return;
+        }
+
+        if (IslandUtils.getCurrentGame() == IslandGameMode.UNKNOWN) {
+            // Lobby or smth
+            return;
+        }
+
+        String titleText = packet.getTitle().getString();
+
+        if (!titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.gameover"))) {
+            return;
+        }
+
+        try {
+            client.getNetworkHandler().sendChatMessage(config.autoGG.autoGGMessage());
+        } catch (NullPointerException e) {
+            logger.error("Error while sending autoGG message: " + e.getMessage());
+        }
+
+    }
+
 }

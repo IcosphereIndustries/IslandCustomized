@@ -1,6 +1,11 @@
 {
   "text.config.islandcustomized.title": "Island Customized Configuration",
 
+  "text.config.islandcustomized.section.generalUtilities": "General Utilities",
+  "text.config.islandcustomized.category.autoGG": "AutoGG",
+  "text.config.islandcustomized.option.autoGG.enableAutoGG": "Enable AutoGG",
+  "text.config.islandcustomized.option.autoGG.enableAutoGG.tooltip": "Automatically sends a message an MCCi game ends.",
+  "text.config.islandcustomized.option.autoGG.autoGGMessage": "AutoGG message",
   "text.config.islandcustomized.section.messageCustomizationSection": "Customize Messages on MCCi",
   "text.config.islandcustomized.option.messageCustomizationSection": "Enable message customizations",
 

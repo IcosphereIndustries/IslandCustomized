@@ -7,7 +7,7 @@
   ],
   "client": [
     "ServerJoinMixin",
-    "TitleCustomizationMixin"
+    "TitleHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
