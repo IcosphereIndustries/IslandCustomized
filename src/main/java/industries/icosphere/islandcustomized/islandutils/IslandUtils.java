@@ -1,8 +1,5 @@
 package industries.icosphere.islandcustomized.islandutils;
 
-import industries.icosphere.islandcustomized.IslandCustomized;
-import industries.icosphere.islandcustomized.utils.CommonUtils;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.ScoreboardObjective;
 import net.minecraft.text.MutableText;
@@ -10,9 +7,7 @@ import net.minecraft.text.MutableText;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static industries.icosphere.islandcustomized.IslandCustomized.config;
-import static industries.icosphere.islandcustomized.IslandCustomized.logger;
-import static industries.icosphere.islandcustomized.IslandCustomized.client;
+import static industries.icosphere.islandcustomized.IslandCustomized.*;
 import static industries.icosphere.islandcustomized.utils.CommonUtils.parseColorCodes;
 import static industries.icosphere.islandcustomized.utils.CommonUtils.pickRandom;
 
@@ -20,6 +15,7 @@ public class IslandUtils {
 
     /**
      * Returns the current game mode.
+     *
      * @return The current game mode (IslandGameMode).
      */
     public static IslandGameMode getCurrentGame() {
@@ -65,6 +61,7 @@ public class IslandUtils {
 
     /**
      * Returns whether the player is on MCCi or not.
+     *
      * @return Whether the player is on MCCi or not.
      */
     public static boolean isOnMCCi() {
@@ -80,6 +77,7 @@ public class IslandUtils {
 
     /**
      * Picks a random victory title from the config based on the current game mode.
+     *
      * @return A random MutableText object containing the victory title.
      */
     public static MutableText pickRandomVictoryTitle() {
@@ -96,6 +94,7 @@ public class IslandUtils {
 
     /**
      * Picks a random defeat title from the config based on the current game mode.
+     *
      * @return A random MutableText object containing the defeat title.
      */
     public static MutableText pickRandomDefeatTitle() {

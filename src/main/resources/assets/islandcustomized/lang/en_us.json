@@ -1,6 +1,5 @@
 {
   "text.config.islandcustomized.title": "Island Customized Configuration",
-
   "text.config.islandcustomized.section.generalUtilities": "General Utilities",
   "text.config.islandcustomized.category.autoGG": "AutoGG",
   "text.config.islandcustomized.option.autoGG.enableAutoGG": "Enable AutoGG",
@@ -8,33 +7,27 @@
   "text.config.islandcustomized.option.autoGG.autoGGMessage": "AutoGG message",
   "text.config.islandcustomized.section.messageCustomizationSection": "Customize Messages on MCCi",
   "text.config.islandcustomized.option.messageCustomizationSection": "Enable message customizations",
-
   "text.config.islandcustomized.category.battleBox_titleReplacements": "Battle Box Message Customizations",
   "text.config.islandcustomized.option.battleBox_titleReplacements.victoryTitles": "Victory titles",
   "text.config.islandcustomized.option.battleBox_titleReplacements.defeatTitles": "Defeat titles",
   "text.config.islandcustomized.option.battleBox_titleReplacements.victoryTitles.tooltip": "Title that appears on your screen when your team wins.",
   "text.config.islandcustomized.option.battleBox_titleReplacements.defeatTitles.tooltip": "Title that appears on your screen when your team loses.",
-
   "text.config.islandcustomized.category.skyBattle_titleReplacements": "Sky Battle Message Customizations",
   "text.config.islandcustomized.option.skyBattle_titleReplacements.victoryTitles": "Victory titles",
   "text.config.islandcustomized.option.skyBattle_titleReplacements.defeatTitles": "Defeat titles",
   "text.config.islandcustomized.option.skyBattle_titleReplacements.victoryTitles.tooltip": "Title that appears on your screen when your team wins.",
-
   "text.config.islandcustomized.category.hitw_titleReplacements": "HITW Message Customizations",
   "text.config.islandcustomized.option.hitw_titleReplacements.victoryTitles": "Victory titles",
   "text.config.islandcustomized.option.hitw_titleReplacements.defeatTitles": "Defeat titles",
   "text.config.islandcustomized.option.hitw_titleReplacements.victoryTitles.tooltip": "Title that appears on your screen when you're the last person standing / time runs out.",
-
   "text.config.islandcustomized.category.tgttos_titleReplacements": "TGTTOS Message Customizations",
   "text.config.islandcustomized.option.tgttos_titleReplacements.victoryTitles": "Victory titles",
   "text.config.islandcustomized.option.tgttos_titleReplacements.defeatTitles": "Defeat titles",
   "text.config.islandcustomized.option.tgttos_titleReplacements.victoryTitles.tooltip": "Title that appears on your screen when you finish 1st.",
-
   "text.config.islandcustomized.category.parkourWarrior_titleReplacements": "Parkour Warrior Message Customizations",
   "text.config.islandcustomized.option.parkourWarrior_titleReplacements.victoryTitles": "Victory titles",
   "text.config.islandcustomized.option.parkourWarrior_titleReplacements.defeatTitles": "Defeat titles",
   "text.config.islandcustomized.option.parkourWarrior_titleReplacements.victoryTitles.tooltip": "Title that appears on your screen when you finish 1st.",
-
   "text.config.islandcustomized.section.advancedDeveloperOptions": "§7§lAdvanced Options",
   "text.config.islandcustomized.category.developerResources": "Developer Resources",
   "text.config.islandcustomized.category.developerResources.tooltip": "These options are meant for development purposes. You shouldn't touch them unless you know what you're doing.\nAnd we mean like you *really* know what you're doing.",

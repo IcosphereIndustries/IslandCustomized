@@ -1,19 +1,18 @@
 package industries.icosphere.islandcustomized.utils;
 
 import io.wispforest.owo.config.ui.ConfigScreen;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TextColor;
 
 import java.awt.*;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-import static industries.icosphere.islandcustomized.IslandCustomized.config;
 import static industries.icosphere.islandcustomized.IslandCustomized.client;
+import static industries.icosphere.islandcustomized.IslandCustomized.config;
 
 public class CommonUtils {
 
@@ -25,6 +24,7 @@ public class CommonUtils {
      * Parses a string for color codes in the HEX format and returns a MutableText object with the color codes applied.
      * The color codes are in the format <#RRGGBB> where R, G, and B are hexadecimal digits. Include the < and >.
      * Sorry for the semi-unreadable code TODO cleanup :)
+     *
      * @param input_ The string to parse
      * @return A MutableText object with the color codes applied
      */
@@ -61,6 +61,7 @@ public class CommonUtils {
 
     /**
      * Picks a random element from an array
+     *
      * @param array The array to pick from
      * @return A random element from the array
      */

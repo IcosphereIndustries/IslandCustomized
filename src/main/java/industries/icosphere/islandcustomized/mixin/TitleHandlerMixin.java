@@ -1,25 +1,19 @@
 package industries.icosphere.islandcustomized.mixin;
 
 import industries.icosphere.islandcustomized.IslandCustomized;
+import industries.icosphere.islandcustomized.events.events.GameDeathEvent;
+import industries.icosphere.islandcustomized.events.events.GameWinEvent;
 import industries.icosphere.islandcustomized.islandutils.IslandGameMode;
 import industries.icosphere.islandcustomized.islandutils.IslandUtils;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
-import net.minecraft.text.MutableText;
-import org.slf4j.Logger;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static industries.icosphere.islandcustomized.IslandCustomized.config;
-import static industries.icosphere.islandcustomized.IslandCustomized.logger;
-import static industries.icosphere.islandcustomized.IslandCustomized.client;
-import static industries.icosphere.islandcustomized.islandutils.IslandUtils.*;
-import static industries.icosphere.islandcustomized.utils.CommonUtils.mutableTextFromString;
+import static industries.icosphere.islandcustomized.IslandCustomized.*;
+import static industries.icosphere.islandcustomized.islandutils.IslandUtils.getCurrentGame;
 
 
 @Mixin(ClientPlayNetworkHandler.class)
@@ -31,34 +25,18 @@ public class TitleHandlerMixin {
             return;
         }
 
-        if (!config.messageCustomizationSection()) {
-            // Message customization is disabled.
-            return;
-        }
-
         String titleText = packet.getTitle().getString();
 
         if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.victory"))) {
-            MutableText newTitle = pickRandomVictoryTitle();
-
-            if (newTitle == null) {
-                return;
-            }
-
-            client.inGameHud.setTitle(newTitle);
+            eventManager.fireEvent(new GameWinEvent(getCurrentGame()));
         } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.defeat"))) {
-            MutableText newTitle = pickRandomDefeatTitle();
-
-            if (newTitle == null) {
-                return;
-            }
-
-            client.inGameHud.setTitle(newTitle);
+            eventManager.fireEvent(new GameDeathEvent(getCurrentGame()));
         }
     }
 
     @Inject(at = @At("TAIL"), method = "onTitle")
     private void autoGG(TitleS2CPacket packet, CallbackInfo ci) {
+        // todo migrate to events
         if (!config.autoGG.enableAutoGG()) {
             System.out.println("AutoGG is disabled.");
             return;

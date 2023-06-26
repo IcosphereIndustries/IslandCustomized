@@ -1,8 +1,8 @@
 package industries.icosphere.islandcustomized;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.Gson;
 import industries.icosphere.islandcustomized.exceptions.CriticallyMalformedConfigError;
 import industries.icosphere.islandcustomized.exceptions.InvalidAPIResponse;
 import industries.icosphere.islandcustomized.exceptions.MalformedAPIResponseError;
@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * IslandTreasureMap is a database that contains updating information about MCCi.
@@ -33,6 +32,7 @@ public class IslandTreasureMap {
 
     /**
      * Gets a value from the treasure map.
+     *
      * @param key The key to get the value of. Example: gameData.BATTLE_BOX.name
      * @return The value of the key. Example: "Battle Box"
      */
@@ -57,6 +57,7 @@ public class IslandTreasureMap {
 
     /**
      * Gets a value from the treasure map.
+     *
      * @param key The key to get the value of. Example: gameData.somethingsomething.intvalue
      * @return The value of the key. Example: 12
      */

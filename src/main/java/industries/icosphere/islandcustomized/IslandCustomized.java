@@ -1,15 +1,17 @@
 package industries.icosphere.islandcustomized;
 
-import industries.icosphere.islandcustomized.IslandCustomizedConfig;
+import industries.icosphere.islandcustomized.events.IslandEventHandler;
+import industries.icosphere.islandcustomized.features.TitleReplacer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class IslandCustomized implements ModInitializer {
-    public static final IslandCustomizedConfig config = IslandCustomizedConfig.createAndLoad();
+    public static final industries.icosphere.islandcustomized.IslandCustomizedConfig config = industries.icosphere.islandcustomized.IslandCustomizedConfig.createAndLoad();
     public static final MinecraftClient client = MinecraftClient.getInstance();
     public static final IslandTreasureMap map = new IslandTreasureMap();
+    public static IslandEventHandler eventManager = new IslandEventHandler();
 
     public static Logger logger = LoggerFactory.getLogger("IslandCustomized");
 
@@ -18,6 +20,9 @@ public class IslandCustomized implements ModInitializer {
      */
     @Override
     public void onInitialize() {
+        eventManager = new IslandEventHandler();
+
+        eventManager.registerEventListener(TitleReplacer.class);
 
         logger.info("mod minecraft :thumebs up:");
 
