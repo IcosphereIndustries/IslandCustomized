@@ -103,11 +103,8 @@ public class IslandTreasureMap {
 
             // Parse the response as JSON
             this.treasureMap = new Gson().fromJson(in, JsonObject.class);
-            System.out.println(this.treasureMap.toString());
-            // Close the connection
             con.disconnect();
 
-            System.out.println("IslandTreasureMap successfully loaded.");
         } catch (java.net.MalformedURLException e) {
             throw new CriticallyMalformedConfigError("The mapInstance URL is malformed. (" + IslandCustomized.config.developerResources.mapInstance() + ")");
         } catch (IOException e) {

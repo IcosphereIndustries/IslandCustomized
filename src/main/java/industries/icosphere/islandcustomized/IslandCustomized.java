@@ -1,6 +1,7 @@
 package industries.icosphere.islandcustomized;
 
 import industries.icosphere.islandcustomized.events.IslandEventHandler;
+import industries.icosphere.islandcustomized.features.AutoGG;
 import industries.icosphere.islandcustomized.features.TitleReplacer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
@@ -23,8 +24,8 @@ public class IslandCustomized implements ModInitializer {
         eventManager = new IslandEventHandler();
 
         eventManager.registerEventListener(TitleReplacer.class);
+        eventManager.registerEventListener(AutoGG.class);
 
         logger.info("mod minecraft :thumebs up:");
-
     }
 }

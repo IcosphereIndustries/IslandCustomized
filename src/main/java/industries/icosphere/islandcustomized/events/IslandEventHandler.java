@@ -79,10 +79,11 @@ public class IslandEventHandler {
 
         for (Method method : methods) {
             if (method.isAnnotationPresent(EventListener.class)) {
-                Class<? extends IslandEvent> eventClass = method.getAnnotation(EventListener.class).value();
-                List<Method> listeners = eventListeners.getOrDefault(eventClass, new ArrayList<>());
-                listeners.add(method);
-                eventListeners.put(eventClass, listeners);
+                for (Class<? extends IslandEvent> eventClass : method.getAnnotation(EventListener.class).value()) {
+                    List<Method> listeners = eventListeners.getOrDefault(eventClass, new ArrayList<>());
+                    listeners.add(method);
+                    eventListeners.put(eventClass, listeners);
+                }
             }
         }
     }

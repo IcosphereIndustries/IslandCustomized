@@ -11,11 +11,6 @@ import industries.icosphere.islandcustomized.islandutils.IslandGameMode;
 public class GameDeathEvent implements IslandEvent {
     public IslandGameMode gameMode;
 
-    /**
-     * Constructs a GameDeathEvent with the specified game mode.
-     *
-     * @param gameMode the game mode that the death event is in
-     */
     public GameDeathEvent(IslandGameMode gameMode) {
         this.gameMode = gameMode;
     }

@@ -16,5 +16,5 @@ public @interface EventListener {
      *
      * @return the event class
      */
-    Class<? extends IslandEvent> value();
+    Class<? extends IslandEvent>[] value();
 }

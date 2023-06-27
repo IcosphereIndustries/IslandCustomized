@@ -11,11 +11,6 @@ import industries.icosphere.islandcustomized.islandutils.IslandGameMode;
 public class GameWinEvent implements IslandEvent {
     public IslandGameMode gameMode;
 
-    /**
-     * Constructs a GameWinEvent with the specified game mode.
-     *
-     * @param gameMode the game mode of the win event
-     */
     public GameWinEvent(IslandGameMode gameMode) {
         this.gameMode = gameMode;
     }
