@@ -10,9 +10,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import static industries.icosphere.islandcustomized.IslandCustomized.map;
 
 @Mixin(ClientPlayNetworkHandler.class)
-public class ServerJoinMixin {
+public abstract class ServerJoinMixin {
+
     @Inject(at = @At("HEAD"), method = "onGameJoin")
-    public void onGameJoin(GameJoinS2CPacket packet, CallbackInfo ci) {
+    public void preGameJoin(GameJoinS2CPacket packet, CallbackInfo ci) {
         map.refresh();
     }
+
 }

@@ -1,5 +1,6 @@
 package industries.icosphere.islandcustomized.utils;
 
+import com.google.gson.JsonElement;
 import io.wispforest.owo.config.ui.ConfigScreen;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
@@ -76,5 +77,25 @@ public class CommonUtils {
     public static void displayConfigScreen() {
         ConfigScreen configScreen = ConfigScreen.create(config, client.currentScreen);
         client.setScreen(configScreen);
+    }
+
+    /**
+     * Gets a value from a json.
+     *
+     * @param key The key to get the value of. Example: gameData.BATTLE_BOX.name
+     * @return The value of the key. Example: "Battle Box"
+     */
+    public static String getFromJson(JsonElement json, String key) {
+        String[] keyParts = key.split("\\.");
+
+        JsonElement jsonElement = json;
+        for (String keyPart : keyParts) {
+            jsonElement = jsonElement.getAsJsonObject().get(keyPart);
+            if (jsonElement == null) {
+                return null;
+            }
+        }
+
+        return jsonElement.getAsString();
     }
 }

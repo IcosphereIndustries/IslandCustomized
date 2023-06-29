@@ -1,15 +1,19 @@
 package industries.icosphere.islandcustomized.client;
 
+import industries.icosphere.islandcustomized.AutoUpdate;
 import net.fabricmc.api.ClientModInitializer;
 
 public class IslandCustomizedClient implements ClientModInitializer {
+
+    public static boolean updateAvailable;
+
     /**
      * Runs the mod initializer on the client environment.
      */
     @Override
     public void onInitializeClient() {
 
-        // hi guys :3
+        updateAvailable = AutoUpdate.checkForUpdate();
 
     }
 }

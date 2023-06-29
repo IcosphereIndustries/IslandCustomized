@@ -3,9 +3,8 @@
   "minVersion": "0.8",
   "package": "industries.icosphere.islandcustomized.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-  ],
   "client": [
+    "MultiplayerScreenMixin",
     "ServerJoinMixin",
     "TitleHandlerMixin"
   ],
