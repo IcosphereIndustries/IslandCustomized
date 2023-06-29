@@ -8,6 +8,7 @@ import io.wispforest.owo.config.annotation.SectionHeader;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 @Modmenu(modId = "islandcustomized")
 @Config(name = "islandcustomized", wrapperName = "IslandCustomizedConfig")
 public class IslandConfig {
@@ -30,23 +31,45 @@ public class IslandConfig {
     public DeveloperResources developerResources = new DeveloperResources();
 
     public static class BattleBoxTitleReplacements {
+
+        public List<String> gameNameTitles = new ArrayList<>(List.of("<#FFFF55>Battle Box"));
+        public List<String> kitSelectionTitles = new ArrayList<>(List.of("<#55FFFF>Select your kit"));
+        public List<String> startTimerTitles = new ArrayList<>(List.of("<#55FFFF>Starting in"));
+        public List<String> roundVictoryTitles = new ArrayList<>(List.of("<#55FF55>&lRound Won!"));
+        public List<String> roundDefeatTitles = new ArrayList<>(List.of("<#FF5555>&lRound Lost!"));
+        public List<String> roundEndTitles = new ArrayList<>(List.of("<#FF5555>&lRound Lost!"));
         public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lEliminated"));
+        public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lGame Over!"));
+
     }
 
     public static class SkyBattleTitleReplacements {
+
+        public List<String> gameNameTitles = new ArrayList<>(List.of("<#FFFF55>Sky Battle"));
+        public List<String> startTimerTitles = new ArrayList<>(List.of("<#55FFFF>Starting in"));
         public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lEliminated"));
+        public List<String> teamVictoryTitles = new ArrayList<>(List.of("<#55FFFF>Team Victory!"));
+        public List<String> eliminationTitles = new ArrayList<>(List.of("<#FF5555>&lEliminated"));
+        public List<String> teamEliminationTitles = new ArrayList<>(List.of("<#FF5555>Team eliminated"));
+        public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lGame Over!"));
     }
 
     public static class HitwTitleReplacements {
+        public List<String> gameNameTitles = new ArrayList<>(List.of("<#FFFF55>Hole in the Wall"));
+        public List<String> startTimerTitles = new ArrayList<>(List.of("<#55FFFF>Starting in"));
         public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lEliminated"));
+        public List<String> eliminationTitles = new ArrayList<>(List.of("<#FF5555>&lEliminated"));
+        public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lGame Over!"));
     }
 
     public static class TgttosTitleReplacements {
+        public List<String> gameNameTitles = new ArrayList<>(List.of("<#FFFF55>TGTTOS"));
+        public List<String> startTimerTitles = new ArrayList<>(List.of("<#55FFFF>Starting in"));
+        public List<String> whackedTitles = new ArrayList<>(List.of("<#55FF55>Whacked!"));
         public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
-        public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lEliminated"));
+        public List<String> timeSkipTitles = new ArrayList<>(List.of("<#FF5555>Time Skip"));
+        public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lGame Over!"));
+
     }
 
     public static class ParkourWarriorTitleReplacements {
