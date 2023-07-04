@@ -1,7 +1,8 @@
 package industries.icosphere.islandcustomized.features;
 
 import industries.icosphere.islandcustomized.events.EventListener;
-import industries.icosphere.islandcustomized.events.events.GameOverEvent;
+import industries.icosphere.islandcustomized.events.events.general.GameEndEvent;
+import industries.icosphere.islandcustomized.events.events.general.GameOverEvent;
 import industries.icosphere.islandcustomized.islandutils.IslandGameMode;
 import industries.icosphere.islandcustomized.islandutils.IslandUtils;
 
@@ -18,8 +19,8 @@ public class AutoGG implements IslandFeature {
         return config.autoGG.enableAutoGG();
     }
 
-    @EventListener(value = GameOverEvent.class)
-    public void onGameEnd(GameOverEvent event) {
+    @EventListener(value = GameEndEvent.class)
+    public void onGameEnd(GameEndEvent event) {
         if (!enabled()) {
             return;
         }

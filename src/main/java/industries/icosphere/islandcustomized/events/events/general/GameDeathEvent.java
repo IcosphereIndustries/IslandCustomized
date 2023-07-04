@@ -1,4 +1,4 @@
-package industries.icosphere.islandcustomized.events.events;
+package industries.icosphere.islandcustomized.events.events.general;
 
 import industries.icosphere.islandcustomized.events.IslandEvent;
 import industries.icosphere.islandcustomized.islandutils.IslandGameMode;

@@ -37,7 +37,7 @@ public class IslandConfig {
         public List<String> startTimerTitles = new ArrayList<>(List.of("<#55FFFF>Starting in"));
         public List<String> roundVictoryTitles = new ArrayList<>(List.of("<#55FF55>&lRound Won!"));
         public List<String> roundDefeatTitles = new ArrayList<>(List.of("<#FF5555>&lRound Lost!"));
-        public List<String> roundEndTitles = new ArrayList<>(List.of("<#FF5555>&lRound Lost!"));
+        public List<String> roundEndTitles = new ArrayList<>(List.of("<#FF5555>&lRound Over!"));
         public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
         public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lGame Over!"));
 
@@ -66,6 +66,7 @@ public class IslandConfig {
         public List<String> gameNameTitles = new ArrayList<>(List.of("<#FFFF55>TGTTOS"));
         public List<String> startTimerTitles = new ArrayList<>(List.of("<#55FFFF>Starting in"));
         public List<String> whackedTitles = new ArrayList<>(List.of("<#55FF55>Whacked!"));
+        public List<String> roundEndTitles = new ArrayList<>(List.of("<#FF5555>&lRound Over!"));
         public List<String> victoryTitles = new ArrayList<>(List.of("<#55FF55>&lVictory!"));
         public List<String> timeSkipTitles = new ArrayList<>(List.of("<#FF5555>Time Skip"));
         public List<String> defeatTitles = new ArrayList<>(List.of("<#FF5555>&lGame Over!"));

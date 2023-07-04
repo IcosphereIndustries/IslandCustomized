@@ -1,13 +1,12 @@
-package industries.icosphere.islandcustomized.events.events;
+package industries.icosphere.islandcustomized.events.events.general;
 
 import industries.icosphere.islandcustomized.events.IslandEvent;
 import industries.icosphere.islandcustomized.islandutils.IslandGameMode;
 
 /**
- * Event that is fired when the minigame ends. Not round end, but game end.
+ * Event that is fired when the player loses the game.
  * <p>
  * More specifically, when the "Game Over!" title is displayed on the screen.
- * This title should be displayed on the client no matter if you won or lost.
  */
 public class GameOverEvent implements IslandEvent {
     public IslandGameMode gameMode;

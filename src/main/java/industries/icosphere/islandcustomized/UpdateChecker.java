@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import static industries.icosphere.islandcustomized.IslandCustomized.logger;
+
 public class UpdateChecker {
 
     public static boolean checkForUpdate() {
@@ -28,7 +30,7 @@ public class UpdateChecker {
             latestRelease = CommonUtils.getFromJson(new Gson().fromJson(in, JsonObject.class), "tag_name");
 
         } catch (Exception e) {
-            System.out.println("Could not check for updates! Please check your internet connection.");
+            logger.info("Could not check for updates! Please check your internet connection.");
         }
 
         if (latestRelease == null) { return false; }
