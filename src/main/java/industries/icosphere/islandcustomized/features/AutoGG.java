@@ -7,6 +7,8 @@ import industries.icosphere.islandcustomized.islandutils.IslandGameMode;
 import industries.icosphere.islandcustomized.islandutils.IslandUtils;
 
 import static industries.icosphere.islandcustomized.IslandCustomized.*;
+import static industries.icosphere.islandcustomized.utils.CommonUtils.parseColorCodes;
+import static industries.icosphere.islandcustomized.utils.CommonUtils.pickRandom;
 
 @IslandFeatureMetadata(
         name = "AutoGG",
@@ -35,7 +37,7 @@ public class AutoGG implements IslandFeature {
         }
 
         try {
-            client.getNetworkHandler().sendChatMessage(config.autoGG.autoGGMessage());
+            client.getNetworkHandler().sendChatMessage((String) pickRandom(config.autoGG.autoGGMessages()));
         } catch (NullPointerException e) {
             logger.error("Error while sending autoGG message: " + e.getMessage());
         }

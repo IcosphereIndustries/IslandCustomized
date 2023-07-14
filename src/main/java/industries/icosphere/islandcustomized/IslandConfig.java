@@ -85,6 +85,6 @@ public class IslandConfig {
 
     public static class AutoGG {
         public boolean enableAutoGG = false;
-        public String autoGGMessage = "gg";
+        public List<String> autoGGMessages = new ArrayList<>(List.of("gg"));
     }
 }
