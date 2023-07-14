@@ -66,7 +66,6 @@ public class TitleHandlerMixin {
             eventManager.fireEvent(new GameLoadEvent(IslandGameMode.SKY_BATTLE));
         } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.SKY_BATTLE.titles.team_defeat"))) {
             eventManager.fireEvent(new TeamDefeatEvent());
-            eventManager.fireEvent(new GameEndEvent(IslandGameMode.SKY_BATTLE));
         } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.SKY_BATTLE.titles.team_victory"))) {
             eventManager.fireEvent(new TeamVictoryEvent());
             eventManager.fireEvent(new GameEndEvent(IslandGameMode.SKY_BATTLE));
