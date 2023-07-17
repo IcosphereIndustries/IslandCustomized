@@ -9,3 +9,4 @@ pluginManagement {
 }
 
 include 'islandcustomized-fabric-1.20'
+include 'islandcustomized-fabric-1.19.4'
