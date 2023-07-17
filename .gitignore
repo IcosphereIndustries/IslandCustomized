@@ -1,6 +1,6 @@
 .gradle
 **/build/
-!src/**/build/
+!islandcustomized-fabric-1.20/src/**/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting

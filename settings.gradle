@@ -7,3 +7,5 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+include 'islandcustomized-fabric-1.20'

@@ -47,3 +47,21 @@ HEX colors: `<#ff0000>This is in red!`
 
 1. Clone the repository, do the obvious stuff
 2. Load the project in your IDE. The project must be built once to generate the required files for our config system.
+
+### Building
+
+There are multiple versions of the project for different versions. You can build a single one by running
+`gradlew islandcustomized-<version>:build` in the root directory of the project. Example for f1.20.1: `gradlew islandcustomized-fabric-1.20:build`
+
+### Development Tips
+1. In IntelliJ, you can launch a development instance of Fabric by going to the run configurations and creating a new Application configuration. For `-cp`, pick the version that you want to work with.
+
+![img.png](.github/img/img.png)
+
+The VM options should look something like this - remember to change the loom cache path to your own.
+
+`-Dfabric.dli.config=C:\Users\karkk\Documents\GitHub\IslandCustomized\.gradle\loom-cache\launch.cfg -Dfabric.dli.env=client -Dfabric.dli.main=net.fabricmc.loader.impl.launch.knot.KnotClient`
+
+For the main class, use `net.fabricmc.devlaunchinjector.Main`
+
+![img_1.png](.github/img/img_1.png)
