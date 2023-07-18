@@ -5,7 +5,6 @@ plugins {
 
 version = project.mod_version
 group = project.maven_group
-
 apply from: '../common.gradle'
 
 dependencies {
@@ -59,6 +58,9 @@ java {
 }
 
 jar {
+    archiveFileName = "islandcustomized-${project.mod_version}-fabric-1.19.4.jar"
+    destinationDirectory.set(file("build/libs"))
+
     from("LICENSE") {
         rename { "${it}_${project.archivesBaseName}" }
     }
