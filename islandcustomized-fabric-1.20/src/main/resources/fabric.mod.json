@@ -32,7 +32,7 @@
       "industries.icosphere.islandcustomized.client.IslandCustomizedClient"
     ],
     "main": [
-      "industries.icosphere.islandcustomized.IslandCustomized"
+      "industries.icosphere.islandcustomized.IslandCustomizedCore"
     ]
   },
   "mixins": [

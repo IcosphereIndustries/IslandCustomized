@@ -9,27 +9,25 @@ group = project.maven_group
 apply from: '../common.gradle'
 
 dependencies {
-    include implementation(project(path: ":islandcustomized-fabric-core", configuration: "namedElements"))
-
     // To change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${project.minecraft_version_f1_20}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings_f1_20}:v2"
+    minecraft "com.mojang:minecraft:${project.minecraft_version_f1_19_4}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings_f1_19_4}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version_f1_20}"
-    modImplementation "io.wispforest:owo-lib:${project.owo_version_f1_20}"
-    annotationProcessor "io.wispforest:owo-lib:${project.owo_version_f1_20}"
-    include "io.wispforest:owo-sentinel:${project.owo_version_f1_20}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version_f1_19_4}"
+    modImplementation "io.wispforest:owo-lib:${project.owo_version_f1_19_4}"
+    annotationProcessor "io.wispforest:owo-lib:${project.owo_version_f1_19_4}"
+    include "io.wispforest:owo-sentinel:${project.owo_version_f1_19_4}"
 }
 
 processResources {
     inputs.property "version", project.version
-    inputs.property "minecraft_version", project.minecraft_version_f1_20
+    inputs.property "minecraft_version", project.minecraft_version_f1_19_4
     inputs.property "loader_version", project.fabric_loader
     filteringCharset "UTF-8"
 
     filesMatching("fabric.mod.json") {
         expand "version": project.version,
-                "minecraft_version": project.minecraft_version_f1_20,
+                "minecraft_version": project.minecraft_version_f1_19_4,
                 "loader_version": project.fabric_loader
     }
 }

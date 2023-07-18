@@ -9,6 +9,8 @@ group = project.maven_group
 apply from: '../common.gradle'
 
 dependencies {
+    include implementation(project(path: ":islandcustomized-fabric-core", configuration: "namedElements"))
+
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version_f1_19_4}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings_f1_19_4}:v2"
