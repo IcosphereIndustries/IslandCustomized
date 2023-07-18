@@ -1,6 +1,6 @@
 package industries.icosphere.islandcustomized.islandutils;
 
-import industries.icosphere.islandcustomized.IslandCustomizedCore;
+import industries.icosphere.islandcustomized.IslandCustomized;
 import industries.icosphere.islandcustomized.utils.CommonUtils;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.ScoreboardObjective;
@@ -17,14 +17,14 @@ public class IslandUtils {
      * @return The current game mode (IslandGameMode).
      */
     public static IslandGameMode getCurrentGame() {
-        if (IslandCustomizedCore.config.developerResources.enableDeveloperMode()) {
+        if (IslandCustomized.config.developerResources.enableDeveloperMode()) {
             return IslandGameMode.SKY_BATTLE;
         }
 
-        if (IslandCustomizedCore.client.player.getScoreboard() != null) {
+        if (IslandCustomized.client.player.getScoreboard() != null) {
 
             // Get first objective from scoreboard, that contains the location data
-            Scoreboard scoreboard = IslandCustomizedCore.client.player.getScoreboard();
+            Scoreboard scoreboard = IslandCustomized.client.player.getScoreboard();
             String locationData = null;
 
             for (ScoreboardObjective objective : scoreboard.getObjectives()) {
@@ -64,12 +64,12 @@ public class IslandUtils {
      */
     public static boolean isOnMCCi() {
 
-        if (IslandCustomizedCore.client.getCurrentServerEntry() == null) {
+        if (IslandCustomized.client.getCurrentServerEntry() == null) {
             // Player is not on a server.
             return false;
         }
 
-        return IslandCustomizedCore.client.getCurrentServerEntry().address.contains("mccisland.net");
+        return IslandCustomized.client.getCurrentServerEntry().address.contains("mccisland.net");
 
     }
 
@@ -80,12 +80,12 @@ public class IslandUtils {
      */
     public static MutableText pickRandomGameTitle() {
         IslandGameMode gameMode = getCurrentGame();
-        IslandCustomizedCore.logger.info(gameMode.name());
+        IslandCustomized.logger.info(gameMode.name());
         return switch (gameMode) {
-            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.hitw_titleReplacements.gameNameTitles()));
-            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.battleBox_titleReplacements.gameNameTitles()));
-            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.tgttos_titleReplacements.gameNameTitles()));
-            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.skyBattle_titleReplacements.gameNameTitles()));
+            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.hitw_titleReplacements.gameNameTitles()));
+            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.battleBox_titleReplacements.gameNameTitles()));
+            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.tgttos_titleReplacements.gameNameTitles()));
+            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.skyBattle_titleReplacements.gameNameTitles()));
             default -> null;
         };
     }
@@ -97,12 +97,12 @@ public class IslandUtils {
      */
     public static MutableText pickRandomStartingTitle() {
         IslandGameMode gameMode = getCurrentGame();
-        IslandCustomizedCore.logger.info(gameMode.name());
+        IslandCustomized.logger.info(gameMode.name());
         return switch (gameMode) {
-            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.hitw_titleReplacements.startTimerTitles()));
-            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.battleBox_titleReplacements.startTimerTitles()));
-            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.tgttos_titleReplacements.startTimerTitles()));
-            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.skyBattle_titleReplacements.startTimerTitles()));
+            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.hitw_titleReplacements.startTimerTitles()));
+            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.battleBox_titleReplacements.startTimerTitles()));
+            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.tgttos_titleReplacements.startTimerTitles()));
+            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.skyBattle_titleReplacements.startTimerTitles()));
             default -> null;
         };
     }
@@ -114,12 +114,12 @@ public class IslandUtils {
      */
     public static MutableText pickRandomVictoryTitle() {
         IslandGameMode gameMode = getCurrentGame();
-        IslandCustomizedCore.logger.info(gameMode.name());
+        IslandCustomized.logger.info(gameMode.name());
         return switch (gameMode) {
-            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.hitw_titleReplacements.victoryTitles()));
-            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.battleBox_titleReplacements.victoryTitles()));
-            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.tgttos_titleReplacements.victoryTitles()));
-            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.skyBattle_titleReplacements.victoryTitles()));
+            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.hitw_titleReplacements.victoryTitles()));
+            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.battleBox_titleReplacements.victoryTitles()));
+            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.tgttos_titleReplacements.victoryTitles()));
+            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.skyBattle_titleReplacements.victoryTitles()));
             default -> null;
         };
     }
@@ -132,8 +132,8 @@ public class IslandUtils {
     public static MutableText pickRandomEliminationTitle() {
         IslandGameMode gameMode = getCurrentGame();
         return switch (gameMode) {
-            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.hitw_titleReplacements.eliminationTitles()));
-            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.skyBattle_titleReplacements.eliminationTitles()));
+            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.hitw_titleReplacements.eliminationTitles()));
+            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.skyBattle_titleReplacements.eliminationTitles()));
             default -> null;
         };
     }
@@ -146,10 +146,10 @@ public class IslandUtils {
     public static MutableText pickRandomDefeatTitle() {
         IslandGameMode gameMode = getCurrentGame();
         return switch (gameMode) {
-            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.hitw_titleReplacements.defeatTitles()));
-            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.battleBox_titleReplacements.defeatTitles()));
-            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.tgttos_titleReplacements.defeatTitles()));
-            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.skyBattle_titleReplacements.defeatTitles()));
+            case HITW -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.hitw_titleReplacements.defeatTitles()));
+            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.battleBox_titleReplacements.defeatTitles()));
+            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.tgttos_titleReplacements.defeatTitles()));
+            case SKY_BATTLE -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.skyBattle_titleReplacements.defeatTitles()));
             default -> null;
         };
     }
@@ -162,8 +162,8 @@ public class IslandUtils {
     public static MutableText pickRandomRoundEndTitle() {
         IslandGameMode gameMode = getCurrentGame();
         return switch (gameMode) {
-            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.battleBox_titleReplacements.roundEndTitles()));
-            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.tgttos_titleReplacements.roundEndTitles()));
+            case BATTLE_BOX -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.battleBox_titleReplacements.roundEndTitles()));
+            case TGTTOS -> CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.tgttos_titleReplacements.roundEndTitles()));
             default -> null;
         };
     }

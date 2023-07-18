@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static industries.icosphere.islandcustomized.IslandCustomizedCore.logger;
+import static industries.icosphere.islandcustomized.IslandCustomized.logger;
 
 public class UpdateChecker {
 

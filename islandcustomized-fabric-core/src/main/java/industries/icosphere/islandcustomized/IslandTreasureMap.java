@@ -88,14 +88,14 @@ public class IslandTreasureMap {
     private void fetchData() {
         try {
             // Make a GET request to the IslandTreasureMap API
-            URL url = new URL(IslandCustomizedCore.config.developerResources.mapInstance());
+            URL url = new URL(IslandCustomized.config.developerResources.mapInstance());
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
 
             int status = con.getResponseCode();
 
             if (status != 200) {
-                throw new InvalidAPIResponse("The IslandTreasureMap API returned a non-200 response code. (" + status + "). GitHub raw content servers down? URL: " + IslandCustomizedCore.config.developerResources.mapInstance());
+                throw new InvalidAPIResponse("The IslandTreasureMap API returned a non-200 response code. (" + status + "). GitHub raw content servers down? URL: " + IslandCustomized.config.developerResources.mapInstance());
             }
 
             // Read the response
@@ -106,12 +106,12 @@ public class IslandTreasureMap {
             con.disconnect();
 
             try {
-                IslandCustomizedCore.logger.info("Successfully fetched data from the IslandTreasureMap API.");
+                IslandCustomized.logger.info("Successfully fetched data from the IslandTreasureMap API.");
             } catch (NullPointerException e) {
                 // Logger is null lol - this always happens at startup
             }
         } catch (java.net.MalformedURLException e) {
-            throw new CriticallyMalformedConfigError("The mapInstance URL is malformed. (" + IslandCustomizedCore.config.developerResources.mapInstance() + ")");
+            throw new CriticallyMalformedConfigError("The mapInstance URL is malformed. (" + IslandCustomized.config.developerResources.mapInstance() + ")");
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (MalformedAPIResponseError e) {

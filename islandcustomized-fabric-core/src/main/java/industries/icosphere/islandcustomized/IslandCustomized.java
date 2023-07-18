@@ -8,7 +8,7 @@ import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class IslandCustomizedCore implements ModInitializer {
+public class IslandCustomized implements ModInitializer {
     public static final industries.icosphere.islandcustomized.IslandCustomizedConfig config = industries.icosphere.islandcustomized.IslandCustomizedConfig.createAndLoad();
     public static final MinecraftClient client = MinecraftClient.getInstance();
     public static final IslandTreasureMap map = new IslandTreasureMap();

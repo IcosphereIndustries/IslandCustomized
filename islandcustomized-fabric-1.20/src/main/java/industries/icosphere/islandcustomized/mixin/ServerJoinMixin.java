@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static industries.icosphere.islandcustomized.IslandCustomizedCore.map;
+import static industries.icosphere.islandcustomized.IslandCustomized.map;
 
 @Mixin(ClientPlayNetworkHandler.class)
 public abstract class ServerJoinMixin {

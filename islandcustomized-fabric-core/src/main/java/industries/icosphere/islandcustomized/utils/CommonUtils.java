@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static industries.icosphere.islandcustomized.IslandCustomizedCore.client;
-import static industries.icosphere.islandcustomized.IslandCustomizedCore.config;
+import static industries.icosphere.islandcustomized.IslandCustomized.client;
+import static industries.icosphere.islandcustomized.IslandCustomized.config;
 
 public class CommonUtils {
 

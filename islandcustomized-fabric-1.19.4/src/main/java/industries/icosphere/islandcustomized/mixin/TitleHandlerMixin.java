@@ -1,6 +1,6 @@
 package industries.icosphere.islandcustomized.mixin;
 
-import industries.icosphere.islandcustomized.IslandCustomizedCore;
+import industries.icosphere.islandcustomized.IslandCustomized;
 import industries.icosphere.islandcustomized.events.events.battlebox.KitSelectionEvent;
 import industries.icosphere.islandcustomized.events.events.battlebox.RoundLoseEvent;
 import industries.icosphere.islandcustomized.events.events.battlebox.RoundWinEvent;
@@ -18,8 +18,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static industries.icosphere.islandcustomized.IslandCustomizedCore.config;
-import static industries.icosphere.islandcustomized.IslandCustomizedCore.eventManager;
+import static industries.icosphere.islandcustomized.IslandCustomized.config;
+import static industries.icosphere.islandcustomized.IslandCustomized.eventManager;
 import static industries.icosphere.islandcustomized.islandutils.IslandUtils.getCurrentGame;
 
 
@@ -35,53 +35,53 @@ public class TitleHandlerMixin {
         String titleText = packet.getTitle().getString();
 
         // Global Titles
-        if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.GLOBAL.titles.victory"))) {
+        if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.victory"))) {
             eventManager.fireEvent(new GameWinEvent(getCurrentGame()));
             eventManager.fireEvent(new GameEndEvent(getCurrentGame()));
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.GLOBAL.titles.defeat"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.defeat"))) {
             eventManager.fireEvent(new GameDeathEvent(getCurrentGame()));
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.GLOBAL.titles.game_over"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.game_over"))) {
             eventManager.fireEvent(new GameOverEvent(getCurrentGame()));
             eventManager.fireEvent(new GameEndEvent(getCurrentGame()));
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.GLOBAL.titles.game_starting"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.game_starting"))) {
             eventManager.fireEvent(new GameStartingEvent(getCurrentGame()));
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.GLOBAL.titles.round_end"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.GLOBAL.titles.round_end"))) {
             eventManager.fireEvent(new RoundEndEvent(getCurrentGame()));
         }
 
         // Battle Box Titles
-        if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.BATTLE_BOX.name"))) {
+        if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.BATTLE_BOX.name"))) {
             eventManager.fireEvent(new GameLoadEvent(IslandGameMode.BATTLE_BOX));
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.BATTLE_BOX.titles.kit_selection"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.BATTLE_BOX.titles.kit_selection"))) {
             eventManager.fireEvent(new KitSelectionEvent());
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.BATTLE_BOX.titles.round_won"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.BATTLE_BOX.titles.round_won"))) {
             eventManager.fireEvent(new RoundWinEvent());
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.BATTLE_BOX.titles.round_lost"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.BATTLE_BOX.titles.round_lost"))) {
             eventManager.fireEvent(new RoundLoseEvent());
         }
 
         // Sky Battle Titles
-        if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.SKY_BATTLE.name"))) {
+        if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.SKY_BATTLE.name"))) {
             eventManager.fireEvent(new GameLoadEvent(IslandGameMode.SKY_BATTLE));
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.SKY_BATTLE.titles.team_defeat"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.SKY_BATTLE.titles.team_defeat"))) {
             eventManager.fireEvent(new TeamDefeatEvent());
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.SKY_BATTLE.titles.team_victory"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.SKY_BATTLE.titles.team_victory"))) {
             eventManager.fireEvent(new TeamVictoryEvent());
             eventManager.fireEvent(new GameEndEvent(IslandGameMode.SKY_BATTLE));
         }
 
         // HITW Titles
-        if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.HOLE_IN_THE_WALL.name"))) {
+        if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.HOLE_IN_THE_WALL.name"))) {
             eventManager.fireEvent(new GameLoadEvent(IslandGameMode.HITW));
         }
 
         // TGTTOS Titles
         // titleText.matches(IslandCustomized.map.getFromTreasureMap())
-        if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.TO_GET_TO_THE_OTHER_SIDE.name"))) {
+        if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.TO_GET_TO_THE_OTHER_SIDE.name"))) {
             eventManager.fireEvent(new GameLoadEvent(IslandGameMode.TGTTOS));
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.TO_GET_TO_THE_OTHER_SIDE.titles.round_finish"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.TO_GET_TO_THE_OTHER_SIDE.titles.round_finish"))) {
             eventManager.fireEvent(new RoundFinishEvent());
-        } else if (titleText.matches(IslandCustomizedCore.map.getFromTreasureMap("gameData.TO_GET_TO_THE_OTHER_SIDE.titles.time_skip"))) {
+        } else if (titleText.matches(IslandCustomized.map.getFromTreasureMap("gameData.TO_GET_TO_THE_OTHER_SIDE.titles.time_skip"))) {
             eventManager.fireEvent(new TimeSkipEvent());
         }
 

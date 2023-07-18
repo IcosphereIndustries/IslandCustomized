@@ -1,6 +1,6 @@
 package industries.icosphere.islandcustomized.features;
 
-import industries.icosphere.islandcustomized.IslandCustomizedCore;
+import industries.icosphere.islandcustomized.IslandCustomized;
 import industries.icosphere.islandcustomized.events.EventListener;
 import industries.icosphere.islandcustomized.events.events.battlebox.KitSelectionEvent;
 import industries.icosphere.islandcustomized.events.events.battlebox.RoundLoseEvent;
@@ -24,7 +24,7 @@ import static industries.icosphere.islandcustomized.islandutils.IslandUtils.*;
 public class TitleReplacer implements IslandFeature {
     @Override
     public boolean enabled() {
-        return IslandCustomizedCore.config.messageCustomizationSection();
+        return IslandCustomized.config.messageCustomizationSection();
     }
 
     // General Titles
@@ -41,7 +41,7 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(GameWinEvent.class)
@@ -56,7 +56,7 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(GameDeathEvent.class)
@@ -71,7 +71,7 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(GameOverEvent.class)
@@ -86,7 +86,7 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(GameStartingEvent.class)
@@ -101,7 +101,7 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(RoundEndEvent.class)
@@ -116,7 +116,7 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     // Battle Box
@@ -128,13 +128,13 @@ public class TitleReplacer implements IslandFeature {
         }
 
         // Picks a random kit title from the battle box config.
-        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.battleBox_titleReplacements.kitSelectionTitles()));
+        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.battleBox_titleReplacements.kitSelectionTitles()));
 
         if (newTitle == null) {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(RoundWinEvent.class)
@@ -143,13 +143,13 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.battleBox_titleReplacements.roundVictoryTitles()));
+        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.battleBox_titleReplacements.roundVictoryTitles()));
 
         if (newTitle == null) {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(RoundLoseEvent.class)
@@ -158,13 +158,13 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.battleBox_titleReplacements.roundDefeatTitles()));
+        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.battleBox_titleReplacements.roundDefeatTitles()));
 
         if (newTitle == null) {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     // Sky Battle
@@ -175,13 +175,13 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.skyBattle_titleReplacements.teamVictoryTitles()));
+        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.skyBattle_titleReplacements.teamVictoryTitles()));
 
         if (newTitle == null) {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(TeamDefeatEvent.class)
@@ -190,13 +190,13 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.skyBattle_titleReplacements.teamEliminationTitles()));
+        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.skyBattle_titleReplacements.teamEliminationTitles()));
 
         if (newTitle == null) {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     // HITW
@@ -208,13 +208,13 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.tgttos_titleReplacements.whackedTitles()));
+        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.tgttos_titleReplacements.whackedTitles()));
 
         if (newTitle == null) {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
     @EventListener(TimeSkipEvent.class)
@@ -223,13 +223,13 @@ public class TitleReplacer implements IslandFeature {
             return;
         }
 
-        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomizedCore.config.tgttos_titleReplacements.timeSkipTitles()));
+        MutableText newTitle = CommonUtils.parseColorCodes((String) CommonUtils.pickRandom(IslandCustomized.config.tgttos_titleReplacements.timeSkipTitles()));
 
         if (newTitle == null) {
             return;
         }
 
-        IslandCustomizedCore.client.inGameHud.setTitle(newTitle);
+        IslandCustomized.client.inGameHud.setTitle(newTitle);
     }
 
 }

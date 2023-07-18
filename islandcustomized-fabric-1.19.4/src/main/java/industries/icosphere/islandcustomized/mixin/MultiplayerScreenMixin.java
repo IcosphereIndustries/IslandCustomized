@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static industries.icosphere.islandcustomized.IslandCustomizedCore.client;
+import static industries.icosphere.islandcustomized.IslandCustomized.client;
 
 @Mixin(MultiplayerScreen.class)
 public class MultiplayerScreenMixin {

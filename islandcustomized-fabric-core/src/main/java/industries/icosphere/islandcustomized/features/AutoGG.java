@@ -1,6 +1,6 @@
 package industries.icosphere.islandcustomized.features;
 
-import industries.icosphere.islandcustomized.IslandCustomizedCore;
+import industries.icosphere.islandcustomized.IslandCustomized;
 import industries.icosphere.islandcustomized.events.EventListener;
 import industries.icosphere.islandcustomized.events.events.general.GameEndEvent;
 import industries.icosphere.islandcustomized.utils.CommonUtils;
@@ -15,7 +15,7 @@ import industries.icosphere.islandcustomized.islandutils.IslandUtils;
 public class AutoGG implements IslandFeature {
     @Override
     public boolean enabled() {
-        return IslandCustomizedCore.config.autoGG.enableAutoGG();
+        return IslandCustomized.config.autoGG.enableAutoGG();
     }
 
     @EventListener(value = GameEndEvent.class)
@@ -23,7 +23,7 @@ public class AutoGG implements IslandFeature {
         if (!enabled()) {
             return;
         }
-        if (!IslandUtils.isOnMCCi() && !IslandCustomizedCore.config.developerResources.enableDeveloperMode()) {
+        if (!IslandUtils.isOnMCCi() && !IslandCustomized.config.developerResources.enableDeveloperMode()) {
             // Player is not on MCCi.
             return;
         }
@@ -34,9 +34,9 @@ public class AutoGG implements IslandFeature {
         }
 
         try {
-            IslandCustomizedCore.client.getNetworkHandler().sendChatMessage((String) CommonUtils.pickRandom(IslandCustomizedCore.config.autoGG.autoGGMessages()));
+            IslandCustomized.client.getNetworkHandler().sendChatMessage((String) CommonUtils.pickRandom(IslandCustomized.config.autoGG.autoGGMessages()));
         } catch (NullPointerException e) {
-            IslandCustomizedCore.logger.error("Error while sending autoGG message: " + e.getMessage());
+            IslandCustomized.logger.error("Error while sending autoGG message: " + e.getMessage());
         }
     }
 }
